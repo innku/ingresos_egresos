@@ -1,0 +1,36 @@
+<h1>
+  Nuevo registro
+</h1>
+
+<%= form_for @register do |f| %>
+  <p>
+    <%= f.label :kind_ingreso, "Ingreso" %><br/>
+    <%= f.radio_button :kind, "ingreso" %>
+
+    <%= f.label :kind_egreso, "Egreso" %><br/>
+    <%= f.radio_button :kind, "egreso" %>
+  </p>
+  <p>
+    <%= f.label :date, "Fecha" %><br/>
+    <%= f.text_field :date, class: "datepicker" %>
+  </p>
+  <p>
+    <%= f.label :name, "Concepto" %><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :amount, "Cantidad" %><br/>
+    <%= f.text_field :amount %>
+  </p>
+  <p>
+    <%= f.label :folio, "Id" %><br/>
+    <%= f.text_field :folio %>
+  </p>
+  <p>
+    <%= f.label :description, "Detalle" %><br/>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit "Guardar" %><br/>
+  </p>
+<% end %>
