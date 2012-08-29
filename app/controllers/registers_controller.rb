@@ -5,8 +5,11 @@ class RegistersController < ApplicationController
 
   def create
     @register = Register.new(params[:register])
-    @register.save
-    redirect_to @register, notice: I18n.t("notice.register.created_successfully")
+    if @register.save
+      redirect_to @register, notice: I18n.t("notice.register.created_successfully")
+    else
+      render :new
+    end
   end
 
   def show

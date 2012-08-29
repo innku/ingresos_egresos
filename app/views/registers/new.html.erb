@@ -3,6 +3,8 @@
 </h1>
 
 <%= form_for @register do |f| %>
+  <%= error_messages_for(@register) %>
+
   <p>
     <%= f.label :kind_ingreso, "Ingreso" %><br/>
     <%= f.radio_button :kind, "ingreso" %>
@@ -12,7 +14,7 @@
   </p>
   <p>
     <%= f.label :date %><br/>
-    <%= f.text_field :date, class: "datepicker" %>
+    <%= f.text_field :date, class: "datepicker", readonly: 'true' %>
   </p>
   <p>
     <%= f.label :name %><br/>

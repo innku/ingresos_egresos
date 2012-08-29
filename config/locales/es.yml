@@ -15,6 +15,12 @@ es:
         folio: "Id"
         amount: "Cantidad"
         name: "Concepto"
+        kind: "Tipo"
+    errors:
+      messages:
+        blank: 'es obligatorio'
+        inclusion: 'no tiene un valor permitido'
+        not_a_number: 'no es un número válido'
   helpers:
     submit:
       register:
