@@ -6,7 +6,7 @@ class RegistersController < ApplicationController
   def create
     @register = Register.new(params[:register])
     @register.save
-    redirect_to @register, notice: "El registro fue creado exitosamente"
+    redirect_to @register, notice: I18n.t("notice.register.created_successfully")
   end
 
   def show

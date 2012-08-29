@@ -1,0 +1,21 @@
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  notice:
+    register:
+      created_successfully: "El registro fue creado exitosamente"
+
+  activerecord:
+    models: 
+      register: "Registro"
+    attributes:
+      register:
+        date: "Fecha"
+        description: "Detalle"
+        folio: "Id"
+        amount: "Cantidad"
+        name: "Concepto"
+  helpers:
+    submit:
+      register:
+        create: 'Guardar'
