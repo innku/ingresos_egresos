@@ -1,6 +1,6 @@
 IngresosEgresos::Application.routes.draw do
 
-  resources :registers, only: [:new, :create, :show]
+  resources :registers
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

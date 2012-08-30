@@ -4,7 +4,7 @@ es:
   notice:
     register:
       created_successfully: "El registro fue creado exitosamente"
-
+      updated_successfully: "El registro fue actualizado exitosamente"
   activerecord:
     models: 
       register: "Registro"
@@ -25,3 +25,7 @@ es:
     submit:
       register:
         create: 'Guardar'
+        update: 'Guardar'
+  date:
+    formats:
+      default: "%d-%m-%Y"

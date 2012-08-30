@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Register" do
   describe "validations" do
-    let(:register) { Register.new(name: "Nuevo concepto", folio: "123", date: Date.today, kind: "ingreso", amount: 200) }
+    let(:register) { FactoryGirl.build(:register) }
 
     it "is valid with valid attributes" do
       register.should be_valid
