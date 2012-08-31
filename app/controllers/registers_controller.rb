@@ -30,6 +30,6 @@ class RegistersController < ApplicationController
   end
 
   def index
-    @registers = Register.all
+    @registers = Register.by_created_at
   end
 end

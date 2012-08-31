@@ -8,6 +8,8 @@ class Register < ActiveRecord::Base
   validates_inclusion_of :kind, in: [INCOME, EGRESS]
   validates_numericality_of :amount, greater_than: 0
 
+  scope :by_created_at, order("created_at ASC")
+
   def income?
     kind == INCOME
   end

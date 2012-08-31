@@ -30,4 +30,13 @@ describe "Register" do
       register.should_not be_valid
     end
   end
+  
+  describe ".by_created_at" do
+    it "orders the registers by creation date from oldest to newest" do
+      oldest_register = FactoryGirl.create(:register)
+      newest_register = FactoryGirl.create(:register)
+
+      Register.by_created_at.should == [oldest_register, newest_register]
+    end
+  end
 end

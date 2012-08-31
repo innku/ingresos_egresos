@@ -9,7 +9,7 @@ Index
 <% @registers.each do |register| %>
   <tr>
     <td><%= l register.date %></td>
-    <td><%= register.name %></td>
+    <td><%= link_to register.name, register %></td>
     <td><%= register.folio %></td>
     <td><%= amount_for register %></td>
   </tr>

@@ -7,6 +7,7 @@ class CreateRegisters < ActiveRecord::Migration
       t.string :folio
       t.text :description
       t.string :kind
+      t.timestamps
     end
   end
 end

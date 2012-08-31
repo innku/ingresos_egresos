@@ -8,7 +8,7 @@
   <strong>Cantidad: </strong><span><%= @register.amount %></span>
 </p>
 <p>
-  <strong>Fecha: </strong><span><%= @register.date.strftime("%d-%m-%Y") %></span>
+  <strong>Fecha: </strong><span><%= l @register.date %></span>
 </p>
 <p>
   <strong>Tipo: </strong><span><%= @register.kind.titleize %></span>

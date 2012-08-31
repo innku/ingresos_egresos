@@ -14,12 +14,14 @@
 ActiveRecord::Schema.define(:version => 20120829212213) do
 
   create_table "registers", :force => true do |t|
-    t.date    "date"
-    t.string  "name"
-    t.decimal "amount"
-    t.string  "folio"
-    t.text    "description"
-    t.string  "kind"
+    t.date     "date"
+    t.string   "name"
+    t.decimal  "amount"
+    t.string   "folio"
+    t.text     "description"
+    t.string   "kind"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
