@@ -19,3 +19,4 @@ Feature: Registers
         Given An income and an egress register exist
         And I visit the registers page
         And I see a list of registers
+        

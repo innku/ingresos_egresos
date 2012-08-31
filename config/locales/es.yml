@@ -16,6 +16,7 @@ es:
         amount: "Cantidad"
         name: "Concepto"
         kind: "Tipo"
+        tag_list: "Tags"
     errors:
       messages:
         blank: 'es obligatorio'

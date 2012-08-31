@@ -4,7 +4,7 @@ class RegistersController < ApplicationController
   end
 
   def create
-    @register = Register.new(params[:register])
+    @register = Register.new(params[:register]) 
     if @register.save
       redirect_to @register, notice: I18n.t("notice.register.created_successfully")
     else
