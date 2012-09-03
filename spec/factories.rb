@@ -6,4 +6,8 @@ FactoryGirl.define do
     kind "ingreso"
     amount 200
   end
+
+  factory :tag, :class => ActsAsTaggableOn::Tag do
+    name "compras"
+  end
 end
