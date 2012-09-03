@@ -51,6 +51,7 @@ Given /^I visit the registers page$/ do
 end
 
 Given /^I see a list of registers$/ do
+    page.should have_content("Diciembre")
     page.should have_content("31-12-2012")
     page.should have_content("Nuevo concepto")
     page.should have_content("-200")
@@ -63,7 +64,7 @@ Given /^An income and an egress register exist$/ do
     FactoryGirl.create(:register)
 end
 
-Given /^An income and an agress register exist from two months ago$/ do
+Given /^Two registers exist from two months ago$/ do
     FactoryGirl.create(:register, :date => Date.today - 2.months)
     FactoryGirl.create(:register, :date => Date.today - 2.months)
 end
@@ -77,6 +78,15 @@ Given /^I see a list of registers from two months ago$/ do
     page.should have_content("01-10-2012")
 end
 
+Given /^One register from one month ago$/ do
+    FactoryGirl.create(:register, :date => Date.today - 1.months)
+end
 
+Given /^I click the next link once$/ do
+    click_link 'next'
+end
 
+Given /^I see a list of registers from one month ago$/ do
+    page.should have_content("01-11-2012")
+end
 

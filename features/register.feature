@@ -22,9 +22,11 @@ Feature: Registers
         And I visit the registers page
         And I see a list of registers
 
-    Scenario: A user can filter the registers by month
-        Given An income and an agress register exist from two months ago
+    Scenario: A user can see registers from previous months
+        Given Two registers exist from two months ago
+        And One register from one month ago
         And I visit the registers page
         And I click the previous link twice
         And I see a list of registers from two months ago
-        
+        And I click the next link once
+        And I see a list of registers from one month ago

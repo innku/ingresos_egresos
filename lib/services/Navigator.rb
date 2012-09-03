@@ -21,6 +21,10 @@ module Services
       (start_date - 1.month).beginning_of_month
     end
 
+    def next_month
+      (start_date + 1.month).beginning_of_month
+    end
+
     def define_finish(finish)
       default_if_error_in_date(start_date.end_of_month) do    
         if finish.present?

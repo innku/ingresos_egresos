@@ -22,6 +22,12 @@ describe "Navigator" do
     end
   end
 
+  describe "#next_month" do 
+    it "returns the month after the start date" do
+      Services::Navigator.new("2012-11-04").next_month.should == Date.parse("2012-12-01")
+    end
+  end
+
   describe "#finish_date" do
     it "sets the finish date to the end month of the start date if no finish date is present" do
       Services::Navigator.new("2012-11-04").finish_date.should == Date.parse("2012-11-30")

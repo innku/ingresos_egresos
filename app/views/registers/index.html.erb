@@ -1,5 +1,6 @@
-<h1></h1>
+<h1><%= l @navigator.start_date, :format => :month %></h1>
 <%= link_to 'previous', registers_path(start: @navigator.previous_month) %>
+<%= link_to 'next', registers_path(start: @navigator.next_month) %>
 <table>
   <thead>
     <th>Fecha</th>
