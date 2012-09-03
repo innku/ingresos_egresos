@@ -51,6 +51,7 @@ Given /^I visit the registers page$/ do
 end
 
 Given /^I see a list of registers$/ do
+    page.should have_content("Diciembre")
     page.should have_content("31-12-2012")
     page.should have_content("Nuevo concepto")
     page.should have_content("-200")
@@ -63,6 +64,52 @@ Given /^An income and an egress register exist$/ do
     FactoryGirl.create(:register)
 end
 
+Given /^Two registers exist from two months ago$/ do
+    FactoryGirl.create(:register, :date => Date.today - 2.months)
+    FactoryGirl.create(:register, :date => Date.today - 2.months)
+end
+
+Given /^I click the previous link twice$/ do
+    click_link 'previous'
+    click_link 'previous'
+end
+
+Given /^I see a list of registers from two months ago$/ do
+    page.should have_content("01-10-2012")
+end
+
+Given /^One register from one month ago$/ do
+    FactoryGirl.create(:register, :date => Date.today - 1.months)
+end
+
+Given /^I click the next link once$/ do
+    click_link 'next'
+end
+
+Given /^I see a list of registers from one month ago$/ do
+    page.should have_content("01-11-2012")
+end
+
+Given /^Two registers created in the range dates provided and one out of the range$/ do
+    FactoryGirl.create(:register, :date => Date.parse("2012-08-01"), :name => "First register")
+    FactoryGirl.create(:register, :date => Date.parse("2012-08-05"), :name => "Last register")
+    FactoryGirl.create(:register, :date => Date.parse("2012-09-01"), :name => "Out of range")
+end
+
+Given /^I set an start date and a finish date$/ do
+    fill_in "De", with: "01-08-2012" 
+    fill_in "Hasta", with: "08-08-2012"
+end
+
+Given /^I click the search button$/ do
+    click_button "Buscar"
+end
+
+Then /^I see a filtered list of registers by the dates provided$/ do
+    page.should have_content("First register")
+    page.should have_content("Last register")
+    page.should_not have_content("Out of range")
+end
 
 
 

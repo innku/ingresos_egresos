@@ -21,4 +21,19 @@ Feature: Registers
         Given An income and an egress register exist
         And I visit the registers page
         And I see a list of registers
-        
+
+    Scenario: A user can see registers from previous months
+        Given Two registers exist from two months ago
+        And One register from one month ago
+        And I visit the registers page
+        And I click the previous link twice
+        And I see a list of registers from two months ago
+        And I click the next link once
+        And I see a list of registers from one month ago
+
+    Scenario: A user can filter the registers list by range of dates
+        Given I visit the registers page
+        And Two registers created in the range dates provided and one out of the range
+        And I set an start date and a finish date
+        And I click the search button 
+        Then I see a filtered list of registers by the dates provided

@@ -1,0 +1,13 @@
+<%= form_tag(search_registers_path, :method => 'get') do |f| %>
+  <p>
+    <%= label_tag(:start, "De:") %><br/>
+    <%= text_field_tag(:start) %>
+  </p>
+  <p>
+    <%= label_tag(:finish, "Hasta:") %><br/>
+    <%= text_field_tag(:finish) %>
+  </p>
+  <p>
+    <%= submit_tag("Buscar") %>
+  </p>
+<% end %>

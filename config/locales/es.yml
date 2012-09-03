@@ -30,3 +30,5 @@ es:
   date:
     formats:
       default: "%d-%m-%Y"
+      month: "%B"
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
