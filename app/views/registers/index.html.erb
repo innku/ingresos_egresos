@@ -1,19 +1,5 @@
 <h1><%= l @navigator.start_date, :format => :month %></h1>
 <%= link_to 'previous', registers_path(start: @navigator.previous_month) %>
 <%= link_to 'next', registers_path(start: @navigator.next_month) %>
-<table>
-  <thead>
-    <th>Fecha</th>
-    <th>Concepto</th>
-    <th>Folio</th>
-    <th>Cantidad</th>
-  </thead>
-<% @registers.each do |register| %>
-  <tr>
-    <td><%= l register.date %></td>
-    <td><%= link_to register.name, register %></td>
-    <td><%= register.folio %></td>
-    <td><%= amount_for register %></td>
-  </tr>
-<% end %>
-</table>
+<%= render 'form_search' %>
+<%= render 'registers_list', registers: @registers %>

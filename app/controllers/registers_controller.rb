@@ -1,6 +1,4 @@
 class RegistersController < ApplicationController
-  respond_to :html, :json
-
   def new
     @register = Register.new
   end
@@ -34,6 +32,10 @@ class RegistersController < ApplicationController
   def index
     @navigator = Services::Navigator.new(params[:start], params[:finish])
     @registers = Register.filter_by_date(@navigator.start_date, @navigator.finish_date)
-    respond_with @registers
+  end
+
+  def search
+    @navigator = Services::Navigator.new(params[:start], params[:finish])
+    @registers = Register.filter_by_date(@navigator.start_date, @navigator.finish_date)
   end
 end
