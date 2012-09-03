@@ -2,4 +2,4 @@
 <%= link_to 'previous', registers_path(start: @navigator.previous_month) %>
 <%= link_to 'next', registers_path(start: @navigator.next_month) %>
 <%= render 'form_search' %>
-<%= render 'registers_list', registers: @registers %>
+<%= render 'registers_list', registers: @registers, stats: @stats %>

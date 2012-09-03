@@ -47,7 +47,7 @@ describe "Register" do
     it "filters the registers by the start date and finish date given in the params" do
       Register.filter_by_date(1.month.ago.to_date, Date.today) == [current_month_register, previous_month_register]
     end
-
   end
+
 end
 

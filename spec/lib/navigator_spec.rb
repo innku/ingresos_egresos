@@ -1,5 +1,5 @@
 require 'active_support/all'
-require 'Services/Navigator'
+require 'Services/navigator'
 
 describe "Navigator" do
   describe "#start_date" do 

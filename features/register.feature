@@ -18,9 +18,10 @@ Feature: Registers
         And the information of the register
 
     Scenario: A user can see a list of registers
-        Given An income and an egress register exist
+        Given Two incomes and two expenses exist
         And I visit the registers page
         And I see a list of registers
+        And I see the total of incomes, expenses and difference
 
     Scenario: A user can see registers from previous months
         Given Two registers exist from two months ago
@@ -37,3 +38,4 @@ Feature: Registers
         And I set an start date and a finish date
         And I click the search button 
         Then I see a filtered list of registers by the dates provided
+
