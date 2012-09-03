@@ -1,4 +1,6 @@
 Feature: Registers
+    Background: 
+        Given Time it is December 2012
 
     Scenario: A user can create a register
         Given I visit the new register page

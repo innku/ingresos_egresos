@@ -31,12 +31,31 @@ describe "Register" do
     end
   end
   
-  describe ".by_created_at" do
-    it "orders the registers by creation date from oldest to newest" do
+  describe ".by_date" do
+    it "orders the registers by date from oldest to newest" do
       oldest_register = FactoryGirl.create(:register)
       newest_register = FactoryGirl.create(:register)
 
-      Register.by_created_at.should == [oldest_register, newest_register]
+      Register.by_date.should == [oldest_register, newest_register]
     end
   end
+
+  describe ".filter_by_date" do
+    let!(:current_month_register) { FactoryGirl.create(:register, :date => Date.today) }
+    let!(:previous_month_register) { FactoryGirl.create(:register, :date => 1.month.ago.to_date) }
+
+    it "filters the registers by the current month when no param is given" do
+      Register.filter_by_date.should == [current_month_register]
+    end
+
+    it "filters the registers by the month specified in the date param" do
+      Register.filter_by_date(1.month.ago.to_date).should == [previous_month_register]
+    end
+
+    it "filters the registers by the start date and finish date given in the params" do
+      Register.filter_by_date(1.month.ago.to_date, Date.today) == [current_month_register, previous_month_register]
+    end
+
+  end
 end
+

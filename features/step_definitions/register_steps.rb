@@ -1,3 +1,7 @@
+Given /^Time it is December (\d+)$/ do |arg1|
+    Timecop.freeze(Time.new(2012,12,01))
+end
+
 Given /^I visit the new register page$/ do
     visit new_register_url
 end

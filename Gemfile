@@ -28,6 +28,7 @@ group :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'timecop'
 end
 
 gem 'jquery-rails'
