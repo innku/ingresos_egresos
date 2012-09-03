@@ -1,5 +1,5 @@
-<h1>Agosto</h1>
-<%= link_to 'previous', registers_path(start: 1.month.ago, format: :json), remote: true %>
+<h1></h1>
+<%= link_to 'previous', registers_path(start: @navigator.previous_month) %>
 <table>
   <thead>
     <th>Fecha</th>

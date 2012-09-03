@@ -21,4 +21,10 @@ Feature: Registers
         Given An income and an egress register exist
         And I visit the registers page
         And I see a list of registers
+
+    Scenario: A user can filter the registers by month
+        Given An income and an agress register exist from two months ago
+        And I visit the registers page
+        And I click the previous link twice
+        And I see a list of registers from two months ago
         

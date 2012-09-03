@@ -32,22 +32,8 @@ class RegistersController < ApplicationController
   end
 
   def index
-    @start, @finish = fetch_dates
-    @registers = Register.filter_by_date(@start, @finish)
+    @navigator = Services::Navigator.new(params[:start], params[:finish])
+    @registers = Register.filter_by_date(@navigator.start_date, @navigator.finish_date)
     respond_with @registers
   end
-
-  private
-
-  def fetch_dates
-    begin
-      dates = []
-      dates << Date.parse(params[:start]) if params[:start]
-      dates << Date.parse(params[:finish]) if params[:finish]
-      dates
-    rescue ArgumentError => e
-      nil
-    end
-  end
-
 end

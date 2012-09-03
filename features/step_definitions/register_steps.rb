@@ -63,6 +63,20 @@ Given /^An income and an egress register exist$/ do
     FactoryGirl.create(:register)
 end
 
+Given /^An income and an agress register exist from two months ago$/ do
+    FactoryGirl.create(:register, :date => Date.today - 2.months)
+    FactoryGirl.create(:register, :date => Date.today - 2.months)
+end
+
+Given /^I click the previous link twice$/ do
+    click_link 'previous'
+    click_link 'previous'
+end
+
+Given /^I see a list of registers from two months ago$/ do
+    page.should have_content("01-10-2012")
+end
+
 
 
 

@@ -12,15 +12,11 @@ class Register < ActiveRecord::Base
 
   attr_accessible :date, :description, :amount, :folio, :name, :kind, :tag_list
   
-
-
   def income?
     kind == INCOME
   end
 
-  def self.filter_by_date(start_date = nil, end_date = nil)
-    start_date ||= Date.today.beginning_of_month
-    end_date ||= start_date.end_of_month
+  def self.filter_by_date(start_date, end_date)
     results = self.where("date >= ?", start_date)
     results = results.where("date <= ?", end_date)
     results.by_date
