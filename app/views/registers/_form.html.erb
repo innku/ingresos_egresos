@@ -1,37 +1,38 @@
 <%= form_for register do |f| %>
   <%= render 'shared/error_messages', object: register %>
-  <p>
-    <%= f.label :kind_ingreso, "Ingreso" %><br/>
+  <p class='radio-button-holder'>
+    <%= f.label :kind_ingreso, "Ingreso", class:'inline' %>
     <%= f.radio_button :kind, "ingreso" %>
 
-    <%= f.label :kind_egreso, "Egreso" %><br/>
+    <%= f.label :kind_egreso, "Egreso", class:'inline' %>
     <%= f.radio_button :kind, "egreso" %>
   </p>
   <p>
-    <%= f.label :date %><br/>
-    <%= f.text_field :date, class: "datepicker", readonly: 'true' %>
+    <%= f.label :date%>
+    <%= f.text_field :date, class: "datepicker input-xlarge", readonly: 'true' %>
   </p>
   <p>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "input-xlarge" %>
   </p>
   <p>
-    <%= f.label :amount %><br/>
-    <%= f.text_field :amount %>
+    <%= f.label :amount %>
+    <%= f.text_field :amount, class: "input-xlarge" %>
   </p>
   <p>
-    <%= f.label :folio %><br/>
-    <%= f.text_field :folio %>
+    <%= f.label :folio %>
+    <%= f.text_field :folio, class: "input-xlarge" %>
   </p>
   <p>
-    <%= f.label :description %><br/>
-    <%= f.text_area :description %>
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "input-xxlarge", rows: "3" %>
   </p>
   <p>
-    <%= f.label :tag_list %><br/>
+    <%= f.label :tag_list %>
     <%= f.text_field :tag_list, class: "tags"%>
   </p>
   <p>
-    <%= f.submit %><br/>
+    <%= f.submit class: "btn btn-primary" %>
+    <%= link_to 'Cancelar', :back , class: "btn btn-link" %>
   </p>
 <% end %>
