@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require jquery.tagsinput.min.js
+//= require bootstrap.min.js
 //= require_tree .

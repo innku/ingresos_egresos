@@ -1,13 +1,7 @@
-<%= form_tag(search_registers_path, :method => 'get') do |f| %>
-  <p>
-    <%= label_tag(:start, "De:") %><br/>
-    <%= text_field_tag(:start, l(@navigator.start_date), class: "datepicker") %>
-  </p>
-  <p>
-    <%= label_tag(:finish, "Hasta:") %><br/>
-    <%= text_field_tag(:finish, l(@navigator.finish_date), class: "datepicker") %>
-  </p>
-  <p>
-    <%= submit_tag("Buscar") %>
-  </p>
+<%= form_tag(search_registers_path, :method => 'get', :class => 'form-inline') do |f| %>
+  <%= label_tag(:start, "De:") %>
+  <%= text_field_tag(:start, l(@navigator.start_date), class: "datepicker") %>
+  <%= label_tag(:finish, "Hasta:") %>
+  <%= text_field_tag(:finish, l(@navigator.finish_date), class: "datepicker") %>
+  <%= submit_tag("Buscar", class:"btn") %>
 <% end %>

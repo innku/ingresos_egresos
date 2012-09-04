@@ -72,8 +72,8 @@ Given /^Two registers exist from two months ago$/ do
 end
 
 Given /^I click the previous link twice$/ do
-    click_link 'previous'
-    click_link 'previous'
+    click_link 'prev-month'
+    click_link 'prev-month'
 end
 
 Given /^I see a list of registers from two months ago$/ do
@@ -85,7 +85,7 @@ Given /^One register from one month ago$/ do
 end
 
 Given /^I click the next link once$/ do
-    click_link 'next'
+    click_link 'next-month'
 end
 
 Given /^I see a list of registers from one month ago$/ do

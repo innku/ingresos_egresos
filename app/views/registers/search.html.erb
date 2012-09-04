@@ -1,4 +1,12 @@
 <h1>Búsqueda de registros</h1>
-<%= link_to 'Regresar al listado de registros', registers_path%>
-<%= render 'form_search' %>
+<%= link_to '<i class="icon-plus icon-white"></i> Crear Registro'.html_safe, new_register_path, 
+            :class => 'btn btn-primary', :id=>'create-register' %>
+<div class='row-fluid navigator-register'>
+  <div class='span4'>
+    <%= link_to 'Regresar al listado de registros', registers_path, :class => 'btn btn-link'%>
+  </div>
+  <div class='span8 '>
+    <%= render 'form_search' %>
+  </div>
+</div>
 <%= render 'registers_list', registers: @registers, stats: @stats %>

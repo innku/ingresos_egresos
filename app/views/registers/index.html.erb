@@ -1,5 +1,17 @@
-<h1><%= l @navigator.start_date, :format => :month %></h1>
-<%= link_to 'previous', registers_path(start: @navigator.previous_month) %>
-<%= link_to 'next', registers_path(start: @navigator.next_month) %>
-<%= render 'form_search' %>
+<div>
+  <h1>Listado de Registros</h1>
+</div>
+<%= link_to '<i class="icon-plus icon-white"></i> Crear Registro'.html_safe, new_register_path, 
+            :class => 'btn btn-primary', :id=>'create-register' %>
+<div class='row-fluid navigator-register'>
+  <div class='span4'>
+    <%= link_to '<i class="icon-chevron-left"></i>'.html_safe, registers_path(start: @navigator.previous_month), :id=>'prev-month' %>
+    <h2 class='inline'><%= l @navigator.start_date, :format => :month %></h2>
+    <%= link_to '<i class="icon-chevron-right"></i>'.html_safe, registers_path(start: @navigator.next_month), :id=>'next-month' %>
+  </div>
+  <div class='span8 '>
+    <%= render 'form_search' %>
+  </div>
+</div>
+
 <%= render 'registers_list', registers: @registers, stats: @stats %>
