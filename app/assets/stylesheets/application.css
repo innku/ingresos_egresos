@@ -11,5 +11,7 @@
  *= require_self
  *= require jquery.ui.all
  *= require jquery.tagsinput.css
+ *= require bootstrap.css
+ *= require bootstrap-responsive.css
  *= require_tree .
  */

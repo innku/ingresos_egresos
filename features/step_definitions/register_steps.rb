@@ -59,9 +59,11 @@ Given /^I see a list of registers$/ do
     page.should have_content("123")
 end
 
-Given /^An income and an egress register exist$/ do
+Given /^Two incomes and two expenses exist$/ do
     FactoryGirl.create(:register, :kind => 'egreso')
     FactoryGirl.create(:register)
+    FactoryGirl.create(:register, :kind => 'egreso', :amount => 100)
+    FactoryGirl.create(:register, :amount => 500)
 end
 
 Given /^Two registers exist from two months ago$/ do
@@ -70,8 +72,8 @@ Given /^Two registers exist from two months ago$/ do
 end
 
 Given /^I click the previous link twice$/ do
-    click_link 'previous'
-    click_link 'previous'
+    click_link 'prev-month'
+    click_link 'prev-month'
 end
 
 Given /^I see a list of registers from two months ago$/ do
@@ -83,7 +85,7 @@ Given /^One register from one month ago$/ do
 end
 
 Given /^I click the next link once$/ do
-    click_link 'next'
+    click_link 'next-month'
 end
 
 Given /^I see a list of registers from one month ago$/ do
@@ -109,6 +111,12 @@ Then /^I see a filtered list of registers by the dates provided$/ do
     page.should have_content("First register")
     page.should have_content("Last register")
     page.should_not have_content("Out of range")
+end
+
+Given /^I see the total of incomes, expenses and difference$/ do
+    page.should have_content("400")
+    page.should have_content("700")
+    page.should have_content("300")
 end
 
 
