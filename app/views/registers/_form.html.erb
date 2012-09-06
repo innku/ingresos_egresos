@@ -29,8 +29,8 @@
   </p>
   <p id="tags">
     <%= f.label :tag_list %>
-    <%= text_field_tag :new_tag %>
-    <%= link_to "eddie", "#", :id => "add_tag" %>
+    <%= text_field_tag :new_tag, nil, class: "tags" %>
+    <%= link_to "agregar", "#", :id => "add_tag" %>
     <%= f.hidden_field :tag_list %>
   </p>
   <p>

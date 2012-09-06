@@ -18,6 +18,10 @@ class window.TagsApp
 class TagsApp.TagFormView
   constructor: (@elem) ->
     @add_tag_input = @elem.find('#new_tag')
+    @add_tag_input.autocomplete({
+      source: "/tags.json",
+      minLength: 2
+    })
     @hidden_tags_input = @elem.find('#register_tag_list')
     @elem.on "element-removed", @remove_tag
 
@@ -39,7 +43,7 @@ class TagsApp.TagFormView
 
 class TagsApp.TagsView
   constructor: (@tags) ->
-    @elem = $('<ul>')
+    @elem = $('<ul id="tags-list">')
 
   render: ->
     @add_tag(tag) for tag in @tags
@@ -55,13 +59,14 @@ class TagsApp.TagView
     @elem = $(@template())
     @elem.on "click", ".delete", @remove_tag
 
-  remove_tag: () =>
+  remove_tag: (e) =>
+    e.preventDefault()
     @elem.trigger("element-removed", {tag_name: @tag})
     @elem.remove()
 
   template: () ->
     """
-      <li>#{@tag}<span class="delete">x</span></li>
+      <li>#{@tag}<a href='#' class="delete"><i class="icon-remove"></i></a></li>
     """
 
   render: ->

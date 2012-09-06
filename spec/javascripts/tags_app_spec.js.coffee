@@ -45,7 +45,7 @@ describe "TagsApp", ->
   describe 'when a user clicks on delete link', ->
     beforeEach ->
       @html = @app.render()
-      @html.find('li:first-child span').click()
+      @html.find('li:first-child .delete').click()
 
     it 'removes the tag from the unordered list', ->
       expect(@html.find('li').length).toEqual 1
