@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.2.8'
 
-gem 'sqlite3'
+
 
 gem 'acts-as-taggable-on', '~> 2.3.1'
 
@@ -22,6 +23,11 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
   gem 'debugger'
   gem 'jasminerice'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 
 group :test do
