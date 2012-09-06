@@ -27,12 +27,21 @@
     <%= f.label :description %>
     <%= f.text_area :description, class: "input-xxlarge", rows: "3" %>
   </p>
-  <p>
+  <p id="tags">
     <%= f.label :tag_list %>
-    <%= f.text_field :tag_list, class: "tags"%>
+    <%= text_field_tag :new_tag %>
+    <%= link_to "eddie", "#", :id => "add_tag" %>
+    <%= f.hidden_field :tag_list %>
   </p>
   <p>
     <%= f.submit class: "btn btn-primary" %>
     <%= link_to 'Cancelar', :back , class: "btn btn-link" %>
   </p>
+
+  <script>
+    $(document).ready(function(e){
+      new TagsApp(<%= f.object.tags %>).render();
+    })
+  </script>
+
 <% end %>

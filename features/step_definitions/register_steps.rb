@@ -12,7 +12,6 @@ Given /^I fill in the register form$/ do
     fill_in "Cantidad", with: "2000"
     fill_in "Id", with: "123"
     fill_in "Detalle", with: "Es un texto no mas..."
-    fill_in "Tags", with: "palabra, muchas, separadas, por, coma"
     choose "Ingreso"
 end
 
@@ -43,7 +42,6 @@ Given /^the information of the register$/ do
     page.should have_content("123")
     page.should have_content("Es un texto no mas...")
     page.should have_content("Ingreso")
-    page.should have_content("palabra, muchas, separadas, por, coma")
 end
 
 Given /^I visit the registers page$/ do
