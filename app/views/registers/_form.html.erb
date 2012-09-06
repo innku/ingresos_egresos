@@ -40,7 +40,8 @@
 
   <script>
     $(document).ready(function(e){
-      new TagsApp(<%= f.object.tags %>).render();
+
+      new TagsApp(<%= f.object.tag_list.to_json.html_safe %>).render();
     })
   </script>
 
