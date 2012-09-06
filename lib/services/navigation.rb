@@ -1,5 +1,5 @@
 module Services
-  class Navigator
+  class Navigation
     attr_reader :start_date, :finish_date
 
     def initialize(start, finish = nil)
