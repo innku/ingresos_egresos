@@ -22,7 +22,7 @@ describe "Navigation" do
     end
   end
 
-  describe "#next_month" do 
+  describe "#next_month" do   
     it "returns the month after the start date" do
       Services::Navigation.new("2012-11-04").next_month.should == Date.parse("2012-12-01")
     end
