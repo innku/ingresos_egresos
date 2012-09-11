@@ -30,4 +30,19 @@
 #tags-list li 
 {
   margin:0px 5px;
-} 
+}
+
+.required 
+{
+  color:#f00;
+}
+
+#new_register input[type='radio']
+{
+  margin:0px;
+}
+
+#new_register #register_kind_ingreso
+{
+  margin-right:20px;
+}

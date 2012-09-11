@@ -1,34 +1,34 @@
-<%= form_for register do |f| %>
+<%= form_for register, :html => {:class => 'form-inline'} do |f| %>
   <%= render 'shared/error_messages', object: register %>
   <p class='radio-button-holder'>
     <%= f.label :kind_ingreso, "Ingreso", class:'inline' %>
-    <%= f.radio_button :kind, "ingreso" %>
+    <%= f.radio_button :kind, "ingreso" , :checked => 'checked'%>
 
     <%= f.label :kind_egreso, "Egreso", class:'inline' %>
     <%= f.radio_button :kind, "egreso" %>
   </p>
   <p>
-    <%= f.label :date%>
+    <%= f.label :date %><span class="help-inline required">*</span><br/>
     <%= f.text_field :date, class: "datepicker input-xlarge", readonly: 'true' %>
   </p>
   <p>
-    <%= f.label :name %>
+    <%= f.label :name %><span class="help-inline required">*</span><br/>
     <%= f.text_field :name, class: "input-xlarge" %>
   </p>
   <p>
-    <%= f.label :amount %>
+    <%= f.label :amount %><span class="help-inline required">*</span><br/>
     <%= f.text_field :amount, class: "input-xlarge" %>
   </p>
   <p>
-    <%= f.label :folio %>
+    <%= f.label :folio %><br/>
     <%= f.text_field :folio, class: "input-xlarge" %>
   </p>
   <p>
-    <%= f.label :description %>
+    <%= f.label :description %><br/>
     <%= f.text_area :description, class: "input-xxlarge", rows: "3" %>
   </p>
   <p id="tags">
-    <%= f.label :tag_list %>
+    <%= f.label :tag_list %><br/>
     <%= text_field_tag :new_tag, nil, class: "tags" %>
     <%= link_to "agregar", "#", :id => "add_tag" %>
     <%= f.hidden_field :tag_list %>
