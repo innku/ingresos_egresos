@@ -12,7 +12,7 @@ es:
       register:
         date: "Fecha"
         description: "Detalle"
-        folio: "Id"
+        folio: "Factura"
         amount: "Cantidad"
         name: "Concepto"
         kind: "Tipo"

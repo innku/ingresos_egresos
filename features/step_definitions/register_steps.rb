@@ -10,7 +10,7 @@ Given /^I fill in the register form$/ do
     fill_in "Fecha", with: "31-12-2012"
     fill_in "Concepto", with: "Registro"
     fill_in "Cantidad", with: "2000"
-    fill_in "Id", with: "123"
+    fill_in "Factura", with: "123"
     fill_in "Detalle", with: "Es un texto no mas..."
     choose "Ingreso"
 end
