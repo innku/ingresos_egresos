@@ -4,7 +4,7 @@ class Register < ActiveRecord::Base
 
   acts_as_taggable
 
-  validates_presence_of :name, :date, :amount, :folio, :kind
+  validates_presence_of :name, :date, :amount, :kind
   validates_inclusion_of :kind, in: [INCOME, EGRESS]
   validates_numericality_of :amount, greater_than: 0
 

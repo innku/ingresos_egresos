@@ -8,7 +8,7 @@ describe "Register" do
       register.should be_valid
     end
 
-    [:name, :date, :kind, :folio, :amount].each do |attr|
+    [:name, :date, :kind, :amount].each do |attr|
       it "is not valid with no #{attr}" do
         register.send("#{attr}=", nil)
         register.should_not be_valid

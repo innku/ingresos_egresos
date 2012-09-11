@@ -54,7 +54,6 @@ Given /^I see a list of registers$/ do
     page.should have_content("Nuevo concepto")
     page.should have_content("-200")
     page.should have_content("200")
-    page.should have_content("123")
 end
 
 Given /^Two incomes and two expenses exist$/ do
