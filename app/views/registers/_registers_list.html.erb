@@ -6,9 +6,9 @@
     <th>Cantidad</th>
   </thead>
 <% registers.each do |register| %>
-  <tr>
+  <tr class='link-to' data-url='<%= register_path(register) %>'>
     <td><%= l register.date %></td>
-    <td><%= link_to register.name, register %></td>
+    <td><%= register.name %></td>
     <td><%= register.folio %></td>
     <td><%= amount_for register %></td>
   </tr>
