@@ -15,15 +15,6 @@ Given /^I fill in the register form$/ do
     choose "Ingreso"
 end
 
-Given /^I press save$/ do
-    click_button "Guardar"
-end
-
-Given /^I see a success message$/ do
-    page.should have_content("El registro fue creado exitosamente")
-
-end
-
 Given /^An existing register$/ do
     @register = FactoryGirl.create(:register)
 end

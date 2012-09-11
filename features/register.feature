@@ -6,7 +6,7 @@ Feature: Registers
         Given I visit the new register page
         And I fill in the register form
         And I press save
-        And I see a success message
+        And I see a success message, "El registro fue creado exitosamente"
         And the information of the register
 
     Scenario: A user can edit a register

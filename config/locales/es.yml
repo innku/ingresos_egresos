@@ -5,9 +5,12 @@ es:
     register:
       created_successfully: "El registro fue creado exitosamente"
       updated_successfully: "El registro fue actualizado exitosamente"
+    supplier:
+      created_successfully: "El proveedor fue creado exitosamente"
   activerecord:
     models: 
       register: "Registro"
+      supplier: "Proveedor"
     attributes:
       register:
         date: "Fecha"
@@ -17,6 +20,9 @@ es:
         name: "Concepto"
         kind: "Tipo"
         tag_list: "Tags"
+      supplier:
+        name: "Nombre"
+        rfc: "RFC"
     errors:
       messages:
         blank: 'es obligatorio'
@@ -27,6 +33,8 @@ es:
       register:
         create: 'Guardar'
         update: 'Guardar'
+      supplier:
+        create: 'Guardar'
   date:
     formats:
       default: "%d-%m-%Y"
