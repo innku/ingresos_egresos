@@ -12,7 +12,13 @@ Given /^I fill in the register form$/ do
     fill_in "Cantidad", with: "2000"
     fill_in "Factura", with: "123"
     fill_in "Detalle", with: "Es un texto no mas..."
+    select 'Ramon Z.', from: "Supplier"
     choose "Ingreso"
+end
+
+Given /^two suppliers exist$/ do
+    FactoryGirl.create(:supplier)
+    FactoryGirl.create(:supplier, name: "Jose Perez")
 end
 
 Given /^An existing register$/ do
@@ -32,6 +38,7 @@ Given /^the information of the register$/ do
     page.should have_content("2000")
     page.should have_content("123")
     page.should have_content("Es un texto no mas...")
+    page.should have_content("Ramon Z.")
     page.should have_content("Ingreso")
 end
 

@@ -14,6 +14,11 @@
 <p>
   <strong>Tipo: </strong><span><%= @register.kind.titleize %></span>
 </p>
+<% if @register.supplier %>
+<p>
+  <strong>Proveedor: </strong><span><%= @register.supplier.name %></span>
+</p>
+<% end %>
 <p>
   <strong>Detalle: </strong><span><%= @register.description %></span>
 </p>
