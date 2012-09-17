@@ -1,5 +1,6 @@
 class RegistersController < ApplicationController
   def new
+    @suppliers = Supplier.suppliers_with_id_for_select
     @register = Register.new
   end
 
@@ -17,6 +18,7 @@ class RegistersController < ApplicationController
   end
 
   def edit
+    @suppliers = Supplier.suppliers_with_id_for_select
     @register = Register.find(params[:id])
   end
 

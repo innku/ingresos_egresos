@@ -10,8 +10,11 @@ class Register < ActiveRecord::Base
 
   scope :by_date, order("date ASC")
 
-  attr_accessible :date, :description, :amount, :folio, :name, :kind, :tag_list
+  attr_accessible :date, :description, :amount, :folio, :name, 
+                  :kind, :tag_list, :supplier_id
   
+  belongs_to :supplier
+
   def income?
     kind == INCOME
   end

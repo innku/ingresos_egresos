@@ -9,4 +9,9 @@ FactoryGirl.define do
   factory :tag, :class => ActsAsTaggableOn::Tag do
     name "compras"
   end
+
+  factory :supplier do
+    name "Ramon Z."
+    rfc "RZMSAF08"
+  end
 end

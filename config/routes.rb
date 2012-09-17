@@ -1,6 +1,7 @@
 IngresosEgresos::Application.routes.draw do
 
-  resources :tags
+  resources :tags, :suppliers
+  
   resources :registers do
     collection do
       get 'search'

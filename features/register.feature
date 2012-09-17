@@ -3,14 +3,16 @@ Feature: Registers
         Given Time it is December 2012
 
     Scenario: A user can create a register
-        Given I visit the new register page
+        Given two suppliers exist
+        And I visit the new register page
         And I fill in the register form
         And I press save
-        And I see a success message
+        And I see a success message, "El registro fue creado exitosamente"
         And the information of the register
 
     Scenario: A user can edit a register
         Given An existing register
+        And two suppliers exist
         And I visit the edit register page for the register
         And I fill in the register form
         And I press save
