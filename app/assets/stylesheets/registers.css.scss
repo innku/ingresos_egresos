@@ -37,6 +37,11 @@
   color:#f00;
 }
 
+.form-inline .field_with_errors
+{
+  display:inline;
+}
+
 #new_register input[type='radio']
 {
   margin:0px;

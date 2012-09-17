@@ -1,10 +1,12 @@
-<%= form_for @supplier do |f| %>
+<h1>Nuevo proveedor</h1>
+<%= form_for @supplier , :html => {:class => 'form-inline'} do |f| %>
+  <%= render 'shared/error_messages', object: @supplier %>
   <p>
-    <%= f.label :name %>
+    <%= f.label :name %><span class="help-inline required">*</span><br/>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :rfc %>
+    <%= f.label :rfc %><span class="help-inline required">*</span><br/>
     <%= f.text_field :rfc %>
   </p>
   <p>

@@ -1,2 +1,7 @@
-<p><%= @supplier.name %></p>
-<p><%= @supplier.rfc %></p>
+<p>
+  <strong>Nombre: </strong><span><%= @supplier.name %></span>
+</p>
+<p>
+  <strong>RFC: </strong><span><%= @supplier.rfc %></span>
+</p>
+<%= link_to 'Regresar al listado de registros', registers_path %>
