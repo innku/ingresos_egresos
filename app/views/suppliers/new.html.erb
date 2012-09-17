@@ -1,0 +1,16 @@
+<h1>Nuevo proveedor</h1>
+<%= form_for @supplier , :html => {:class => 'form-inline'} do |f| %>
+  <%= render 'shared/error_messages', object: @supplier %>
+  <p>
+    <%= f.label :name %><span class="help-inline required">*</span><br/>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :rfc %><span class="help-inline required">*</span><br/>
+    <%= f.text_field :rfc %>
+  </p>
+  <p>
+    <%= f.submit class: "btn btn-primary" %>
+    <%= link_to 'Cancelar', :back , class: "btn btn-link" %>
+  </p>
+<% end %>
