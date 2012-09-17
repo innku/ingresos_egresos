@@ -31,7 +31,8 @@ class RegistersController < ApplicationController
 
   def index
     @navigator = Services::Navigation.new(params[:start], params[:finish])
-    @registers = Register.filter_by_date(@navigator.start_date, @navigator.finish_date)
+    @registers = Register.filter_by_date(@navigator.start_date, 
+                                         @navigator.finish_date)
     @stats = Services::AccountingStats.new(@registers)
   end
 

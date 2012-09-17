@@ -3,8 +3,8 @@ require 'Services/navigation'
 
 describe "Navigation" do
   describe "#start_date" do 
-    it "returns todays date if start variable is nil" do
-      Services::Navigation.new(nil).start_date.should == Date.today
+    it "returns the first day of the current month if start variable is nil" do
+      Services::Navigation.new(nil).start_date.should == Date.today.beginning_of_month
     end
 
     it "sets the start date to the desired date" do

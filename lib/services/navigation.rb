@@ -12,7 +12,7 @@ module Services
         if start.present?
           Date.parse(start)
         else
-          Date.today
+          Date.today.beginning_of_month
         end    
       end
     end
